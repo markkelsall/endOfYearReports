@@ -114,6 +114,7 @@ public class FileUploadServlet extends HttpServlet {
 			out.println("</html>");
 
 			FileProcessor fileProcessor = new FileProcessor();
+			fileProcessor.process(fileName);
 			System.out.println("file name: "+fileName.substring(fileName.lastIndexOf("\\")));
 			String s = fileName.substring(fileName.lastIndexOf("\\"));
 			System.out.println(filePath);
@@ -121,7 +122,7 @@ public class FileUploadServlet extends HttpServlet {
 			String fileP = filePath.concat(s+"\\");
 
 			System.out.println(fileP);
-			rd.read(fileP);
+			
 		} catch(Exception ex) {
 			System.out.println(ex);
 		}
